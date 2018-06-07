@@ -1,4 +1,9 @@
 import vUtil from "../utils/VUtil.js";
+/**
+ * type 1 盈客云
+ * type 2 盈客云备用
+ */
+var appType = 1;
 var app = getApp();
 var control = function () {
 }
@@ -9,7 +14,7 @@ var control = function () {
  * 2 线上
  */
 function getJudge(callback) {
-  vUtil.request("api/getSecretkey", { type: 1 }, res => {
+  vUtil.request("api/getSecretkey", { type: appType }, res => {
     callback(res)
   })
 }
@@ -22,7 +27,7 @@ function logIn() {
       var code = res.code;
       var date = {};
       date.code = code;
-      date.type = 1;
+      date.type = appType;
       // vUtil.request("api/getUser/" + code, null, res => {
       //   console.log("=-=-=-=-=",res)
       // })
@@ -64,7 +69,7 @@ function logIn() {
  * 
  */
 function accountLogIn(data) {
-  data.type = 1;
+  data.type = appType;
   vUtil.request("login", JSON.stringify(data), "POST", (res) => {
     var code = res.errorCode;
     if (code == 0) {
