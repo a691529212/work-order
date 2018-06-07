@@ -1,0 +1,143 @@
+/* pages/order_detail/order_detail.wxss */
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.horizontal_layout {
+  display: flex;
+  width: 710rpx;
+  padding: 20rpx 15rpx 20rpx 15rpx;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.pro {
+  width: 670rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+}
+
+.progress_cover {
+  display: flex;
+  margin-top: -46rpx;
+  margin-left: 20rpx;
+  justify-content: space-between;
+  width: 680rpx;
+}
+
+.vertical {
+  flex-direction: row-reverse;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.time_font {
+  margin-top: 25rpx;
+  color: #777;
+  font-size: 22rpx;
+}
+
+.content {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  width: 670rpx;
+  margin-bottom: 5rpx;
+}
+
+.go_on {
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5rpx;
+  background: #2196f3;
+  width: 150rpx;
+}
+
+.des {
+  font-size: 28rpx;
+  padding: 5rpx;
+  border: 1rpx solid #c9c9c9;
+  border-radius: 5rpx;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.blur {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 30;
+}
+
+.module {
+  background: #fff;
+  /* top: 110rpx; */
+  width: 650rpx;
+  height: 780rpx;
+  /* left: 50rpx; *//* align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-self: center; */
+}
+
+.star {
+  width: 46rpx;
+  height: 56rpx;
+  padding: 40rpx;
+}
+
+.img_view {
+  display: inline-block;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-content: flex-start;
+  border-bottom: 2rpx solid #f2f2f2;
+  margin-bottom: 20rpx;
+  width: 670rpx;
+}
+
+.photo {
+  width: 195rpx;
+  height: 195rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 5rpx;
+}
+
+.report {
+  width: 750rpx;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 20rpx solid #f7f7f7;
+}
+
+.comfirm {
+  width: 580rpx;
+  height: 100rpx;
+  margin-top: 50rpx;
+  line-height: 100rpx;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 34rpx;
+  background: #2196f3;
+  border-radius: 5rpx;
+}

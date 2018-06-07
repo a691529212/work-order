@@ -1,0 +1,30 @@
+<view class='container'>
+  <view style='width:750rpx;border-bottom: 1rpx solid #dcdcdc;margin-bottom:10rpx'>
+    <text class='des'>{{des}}</text>
+    <image class='headImg' src='{{headUrl}}'></image>
+  </view>
+  <view style='width:750rpx;border-bottom: 1rpx solid #dcdcdc;margin-bottom:10rpx'>
+    <image src='/img/wx.png' class='icon'></image>
+    <text class='font'>{{wxID}}</text>
+    <text class='add_friend' bindtap='add_friend'>加好友</text>
+  </view>
+  <view style='width:750rpx;border-bottom: 1rpx solid #dcdcdc;margin-bottom:10rpx'>
+    <image src='/img/phone.png' class='icon'></image>
+    <text class='font'>{{phone}}</text>
+    <text class='add_friend' bindtap='phone_call'>拨号</text>
+  </view>
+  <view style='width:750rpx;border-bottom: 1rpx solid #dcdcdc;margin-bottom:10rpx'>
+    <image src='/img/company.png' class='icon'></image>
+    <text class='font'>公司简介</text>
+    <text style='display:block;margin:15rpx;'>{{companyDes}}</text>
+  </view>
+  <view style='width:750rpx;margin-bottom:10rpx'>
+    <image src='/img/pic.png' class='icon'></image>
+    <text class='font'>照片</text>
+  </view>
+  <view style='width:100%'>
+    <image wx:for='{{picList}}' wx:key="{{index}}" class='photo' src='{{item.path}}' data-info='{{index}}'
+    bindtap='item_click'></image>
+  </view>
+
+</view>

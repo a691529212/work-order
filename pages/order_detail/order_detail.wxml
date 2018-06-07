@@ -1,0 +1,64 @@
+<!--pages/order_detail/order_detail.wxml-->
+<view class='container'>
+  <view class='horizontal_layout' style='justify-content: space-between;border-top: 1rpx solid #f7f7f7;border-bottom: 20rpx solid #e4e4e4;font-size:28rpx;padding:40rpx;color:#444444;height:174rpx;'>
+    <view class='vertical'>
+      <text>工单编号 : {{orderDetail.details.ticket_no}}</text>
+      <text style='display:block;margin-top:40rpx'>{{orderDetail.details.title}}</text>
+    </view>
+    <text style='color:{{orderDetail.state.color}}'> {{orderDetail.state.state}}</text>
+  </view>
+
+  <view style='justify-content:center;' class='report' hidden='{{orderDetail.details.progress!=5}}'>
+    <image wx:for="{{reportStarList}}" src='{{item}}' data-index='{{index}}' class='star' wx:key="{{index}}"></image>
+    <text style='display:block;font-size:32rpx;color:#737e83;width:680rpx;height:40rpx;line-height:40rpx;margin-top:46rpx;margin-bottom:40rpx;margin-left:20rpx;'>{{des}}</text>
+    <text style='display:block;font-size:28rpx;margin-top:30rpx;width:670rpx;height:170rpx;background:#f7f7f7;border-radius: 5rpx;padding:20rpx;margin-bottom:40rpx;margin-left:20rpx;' wx:if="{{content.length>0}}">{{content}}</text>
+  </view>
+
+  <text style='font-size:28rpx;color:#777777;height:50rpx;line-height:50rpx;text-align: center;justify-content: flex-start;padding:20rpx;'>订单进度</text>
+  <progress percent='{{progress.progress}}' stroke-width="2" activeColor="#2196f3" color='pink' backgroundColor="#f7f7f7" class='pro' />
+  <view class='progress_cover'>
+    <view wx:for="{{progress.img}}">
+      <image src='{{item}}' style='width:46rpx;height:46rpx'></image>
+    </view>
+  </view>
+  <view class='horizontal_layout' style='justify-content: space-between;font-size:24rpx;color:#444444'>
+    <text>等待派发</text>
+    <text>正在处理</text>
+    <text>关闭工单</text>
+    <text>服务评价</text>
+  </view>
+  <text wx:if="{{orderDetail.details.progress!=5}}" hidden='{{unique==0}}' class='des' data-des='{{progress.des}}' bindtap='tapDes'>{{progress.des}}</text>
+
+  <view class='horizontal_layout' style='justify-content: space-between;border-top: 10rpx solid #e4e4e4;margin-top:20rpx;margin-bottom:20rpx'>
+    <text style='font-size:26rpx;color:#777777'>沟通记录</text>
+    <text class='go_on' wx:if="{{orderDetail.details.progress<3}}" bindtap="askmore">继续反馈</text>
+  </view>
+  <view wx:for="{{orderDetail.record}}" wx:key="{{index}}" style='width:670rpx;'>
+    <text class='time_font'>{{item.user_name}}   {{item.create_time}}</text>
+    <text style='display:block;color:{{item.color}}' class='content'> {{item.content}}</text>
+    <view class='img_view' wx:if="{{item.file_url.length>0}}}">
+      <image wx:for="{{item.file_url}}" wx:for-item="img_item" wx:key="{{index}}" src='{{url}}{{img_item}}' class='photo' bindtap='img_click' data-date='{{item}}'>
+      </image>
+    </view>
+  </view>
+
+
+</view>
+
+<modal class="module" hidden="{{show}}" no-cancel confirm-text="提交" bindconfirm="confrim" catchtouchmove="true">
+  <!-- <view class='module' hidden='{{show}}'> -->
+  <text style='font-size:30rpx;color:#444444;margin-top:46rpx'>请对本次服务进行评价</text>
+  <view style='display: inline-block;'>
+    <image wx:for="{{starList}}" src='{{item}}' data-index='{{index}}' class='star' bindtap='item_click' wx:key="{{index}}">
+    </image>
+  </view>
+  <text style='display:block;font-size:24rpx;color:#999999;margin-top:40rpx;margin-bottom:40rpx;margin-left:20rpx'>{{level}}</text>
+  <textarea placeholder="其它反馈意见" bindinput='input' style='width:590rpx;height:260rpx;background:#f7f7f7;border-radius: 5rpx;padding:20rpx;'></textarea>
+  <!-- <text bindtap='confrim' class='comfirm'>提交</text> -->
+  <!-- </view> -->
+</modal>
+
+
+<!-- 
+<image style='height:{{screenHeight}}px ;width:{{screenWidth}}px' class='blur' src='/img/zh.png' hidden='{{show}}' mode='scaleToFill' bindtap='catch'>
+</image> -->

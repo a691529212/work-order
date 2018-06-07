@@ -1,0 +1,6 @@
+/* pages/wel/wel.wxss */
+
+.bac {
+  width: 414px;
+  height: 736px;
+}

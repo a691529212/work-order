@@ -1,0 +1,15 @@
+<!--pages/login/login.wxml-->
+  <image src='/img/bg.png' class='logo'></image>
+
+<view class='container'>
+  <view class='horizontal' style='margin-top:150rpx'>
+    <text>账户</text>
+    <input placeholder="用户名" class='input' bindinput='input_account' confirm-type="next" bindconfirm="next"></input>
+  </view>
+  <view class='horizontal'>
+    <text>密码</text>
+    <input placeholder="密码" class='input' password='true' bindinput='input_password' confirm-type='done' bindconfirm="login" focus='{{passFocus}}' bindtap='next'></input>
+  </view>
+
+  <button type='primary' style='width:580rpx;margin-top:190rpx;  background: #2196f3' bindtap='login'>登录</button>
+</view>

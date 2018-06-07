@@ -1,0 +1,15 @@
+<!--pages/ask_more/ask_more.wxml-->
+<view class='container'>
+  <textarea class='content' placeholder="反馈内容" bindinput='input'>
+  </textarea>
+  <view class='horizontal_layout'>
+    <text class='title' style='margin-left:20rpx;'>图片</text>
+    <text class='title' style='margin-right:20rpx'> {{imgList.length-1}}/5</text>
+  </view>
+  <view class='img_view'>
+    <image wx:for="{{imgList}}" src='{{item}}' class='photo' bindtap='itemClick' bindlongtap='itemLongClick' data-index='{{index}}'>
+    </image>
+  </view>
+
+  <text class='corfim' bindtap='sumbit'>提交</text>
+</view>

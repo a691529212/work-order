@@ -1,0 +1,39 @@
+<!--pages/create_order/create_order.wxml-->
+<view class='container'>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="type_name">
+    <view class='horizontal' style='border-top: 1rpx solid #f7f7f7;'>
+      <text class='title'>工单分类</text>
+      <text class='info_text'> {{multiArray[0][multiIndex[0]].type_name}}，{{multiArray[1][multiIndex[1]].type_name}}</text>
+      <image src='/img/arr_r.png' class='right_arrows'></image>
+    </view>
+  </picker>
+  <view class='horizontal'>
+    <text class='title' style='color:#999999;font-size:28rpx'>标题</text>
+    <input class='info_text' bindinput='input_title' placeholder="标题" style='width:580rpx'></input>
+  </view>
+  <view class='horizontal' style='justify-content: flex-start;height:260rpx;align-items: flex-start;'>
+    <text class='title' style='color:#999999;font-size:28rpx;line-height:50rpx;white-space: nowrap'>问题描述</text>
+    <textarea class='info_text' bindinput='input_des' style='display: block;margin-left:30rpx;;line-height:50rpx' placeholder="问题描述"></textarea>
+  </view>
+
+  <view class='horizontal_layout'>
+    <text class='title' style='margin-left:40rpx;color:#444444;'>图片</text>
+    <text class='title' style='margin-right:20rpx;color:#999999'> {{imgList.length-1}}/5</text>
+  </view>
+  <view class='img_view'>
+    <image wx:for="{{imgList}}" src='{{item}}' class='photo' bindtap='itemClick' bindlongtap='itemLongClick' data-index='{{index}}'>
+    </image>
+  </view>
+  <text class='confrim' bindtap='confrim'>完成</text>
+
+  <view class='bottom_layout' hidden='{{unique==0}}'>
+    <view style='display: flex;flex-direction: column;align-items: center;justify-content: space-between;box-sizing: border-box; ' bindtap='my_order'>
+      <image src='/img/my.png' style='width:42rpx;height:42rpx'></image>
+      <text style='color:#777777;display:block;font-size:22rpx;margin-top:20rpx'>我的工单</text>
+    </view>
+    <view style='display: flex;flex-direction: column;align-items: center;justify-content: space-between;box-sizing: border-box;'>
+      <image src='/img/new_s.png' style='width:42rpx;height:42rpx'></image>
+      <text style='color:#3396e2;display:block;font-size:22rpx;margin-top:20rpx'>新建工单</text>
+    </view>
+  </view>
+</view>

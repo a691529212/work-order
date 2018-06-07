@@ -1,0 +1,6 @@
+<!--pages/notice/notice.wxml-->
+<view class='container'>
+  <text class='title'>{{notice.notice_title}}</text>
+  <text class='time'>{{notice.create_time}}</text>
+  <text class='content'>{{notice.notice_text}}</text>
+</view>

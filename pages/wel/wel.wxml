@@ -1,0 +1,4 @@
+<!--pages/wel/wel.wxml-->
+<image src='/img/bac.jpg' class='bac'></image>
+
+<button open-type='getUserInfo'bindgetuserinfo="wwww">吃饭饭发的 </button>

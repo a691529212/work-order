@@ -1,0 +1,68 @@
+<!--pages/home/home.wxml-->
+<image src='/img/tz.png' class='horizontal_notice' hidden="{{unique==0}}" bindtap='notice_info'>
+</image>
+<view class='text' bindtap='notice_info' hidden="{{unique==0}}">{{text}}</view>
+<view class='horizontal_notice' wx:if="{{unique==1}}" style='z-index:21'> </view>
+
+<image wx:if="{{unique==0}}" src='/img/bg1.png' bindtap='getOrder' style='width:730rpx;height:160rpx;padding:10rpx;position: fixed;top:0'></image>
+<view class='unOrder' bindtap='getOrder' wx:if="{{unique==0}}">
+  你有
+  <view wx:if="{{unique==0}}" style='color:#ffd300' bindtap='getOrder'>{{orderInUse}}</view> 条工单未处理
+</view>
+<view wx:if="{{unique==0}}" class='getOrder' bindtap='getOrder'>点击领取工单</view>
+
+
+<view class='radio_buttun' style='border-top: 10rpx solid #fff;top:{{top1}}'>
+  <view class='vertical' data-index='-1' bindtap='check'>
+    <text style='display:block ;margin-left:-17rpx; color:#3396e2; border-bottom: 2rpx solid : #3396e2;' wx:if="{{index==-1}}">全部</text>
+    <text style='display:block ;margin-left:-17rpx ; color:#979797' wx:if="{{index!=-1}}">全部</text>
+  </view>
+  <view class='vertical' wx:if="{{unique==1}}" data-index='0' bindtap='check'>
+
+    <text style='display:block ;margin-left:-17rpx; color:#3396e2; border-bottom: 2rpx solid : #3396e2;' wx:if="{{index==0}}">处理中</text>
+    <text style='display:block ;margin-left:-17rpx ; color:#979797' wx:if="{{index!=0}}">处理中</text>
+  </view>
+  <view class='vertical' wx:if="{{unique==0}}" data-index='1' bindtap='check'>
+
+    <text style='display:block ;margin-left:-17rpx; color:#3396e2; border-bottom: 2rpx solid : #3396e2;' wx:if="{{index==1}}">待回复</text>
+    <text style='display:block ;margin-left:-17rpx ; color:#979797' wx:if="{{index!=1}}">待回复</text>
+  </view>
+
+  <view class='vertical' wx:if="{{unique==1}}" data-index='2' bindtap='check'>
+
+    <text style='display:block ;margin-left:-17rpx; color:#3396e2' wx:if="{{index==2}}">已回复</text>
+    <text style='display:block ;margin-left:-17rpx ; color:#979797' wx:if="{{index!=2}}">已回复</text>
+  </view>
+
+  <view class='vertical' wx:if="{{unique==0}}" data-index='2' bindtap='check'>
+
+    <text style='display:block ;margin-left:-17rpx; color:#3396e2' wx:if="{{index==2}}">已回复</text>
+    <text style='display:block ;margin-left:-17rpx ; color:#979797' wx:if="{{index!=2}}">已回复</text>
+  </view>
+</view>
+
+<scroll-view class='container' style='margin-bottom:80rpx;margin-top:{{top2}}' scroll-y enable-back-to-top bindscrolltoupper="refresh" bindscrolltolower="loadmore">
+
+  <view wx:for="{{orderList}}" wx:key="{{index}}" style='justify-content: space-between;padding:30rpx;width:750rpx; border-bottom: 20rpx solid #f7f7f7;' data-info='{{item}}' bindtap='item_click'>
+    <view style='display: flex;justify-content: space-between;width:690rpx; align-items: center'>
+      <text style='line-height:28rpx;font-size:28rpx;margin-top:30rpx;color:#444444'>紧急程度: {{item.level}}</text>
+      <text style='line-height:26rpx;font-size:26rpx;margin-top:30rpx;color:{{item.state.color}}'>{{item.state.state}}</text>
+
+    </view>
+    <text style='font-size: 26rpx;display:block;margin-top:30rpx;color:#444444'>{{item.title}}</text>
+    <text style='font-size: 24rpx;display:block;margin-top:30rpx;color:#999999'>{{item.create_time}}</text>
+  </view>
+  <!--暂无工单  -->
+  <image src='/img/kong.png' hidden='{{orderList.length>0}}' class="empty_img"></image>
+  <text class='empty_order' hidden='{{orderList.length>0}}'>暂无工单</text>
+</scroll-view>
+<view class='bottom_layout' hidden='{{unique==0}}'>
+  <view style='display: flex;flex-direction: column;align-items: center;justify-content: space-between;box-sizing: border-box;'>
+    <image src='/img/my_s.png' style='width:42rpx;height:42rpx'></image>
+    <text style='color:#3396e2;display:block;font-size:22rpx;margin-top:20rpx'>我的工单</text>
+  </view>
+  <view style='display: flex;flex-direction: column;align-items: center;justify-content: space-between;box-sizing: border-box;' bindtap='create_order'>
+    <image src='/img/new.png' style='width:42rpx;height:42rpx'></image>
+    <text style='color:#777777;display:block;font-size:22rpx;margin-top:20rpx'>新建工单</text>
+  </view>
+</view>

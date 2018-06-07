@@ -1,0 +1,59 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+} 
+.des {
+  color: #82828c;
+  font-size: 56rpx;
+  align-self: center;
+  margin: 15rpx;
+  
+}
+.headImg{
+  width: 65rpx;
+  height: 65rpx;
+  align-content: flex-end;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  margin: 15rpx;
+
+}
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 15rpx;
+  justify-content: center;
+  align-self: center;
+  
+}
+.font {
+  font-size: 36rpx;
+  text-align: start;
+  align-self: center;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  position: absolute;
+  margin: 15rpx;
+}
+.add_friend{
+  border-radius: 15rpx;
+  border: 1rpx solid #50b674;
+  padding: 5rpx;
+  color: #50b674;
+  font-size: 36rpx;
+  position: absolute;
+  right: 0;
+  margin: 15rpx;
+}
+.photo{
+  width: 250rpx;
+  height: 250rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  display: inline-block;
+}

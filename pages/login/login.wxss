@@ -1,0 +1,18 @@
+/* pages/login/login.wxss */
+
+.logo {
+  width: 750rpx;
+  height: 375rpx;
+}
+
+.horizontal {
+  margin-top: 60rpx;
+  display: flex;
+  border-radius: 15rpx;
+  border: 1rpx solid #bbb;
+  padding: 15rpx;
+}
+
+.input {
+  margin-left: 45rpx;
+}

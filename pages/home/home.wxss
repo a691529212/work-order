@@ -1,0 +1,131 @@
+/* pages/home/home.wxss */
+
+.horizontal {
+  /* margin-top: 60rpx; *//* position: fixed; */
+  display: flex;
+  width: 720rpx;
+  padding: 15rpx;
+  border-bottom: 1rpx solid #bbb;
+  font-size: 28rpx;
+}
+
+.horizontal_notice {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 750rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  z-index: 22;
+  background: #fff;
+}
+
+.text {
+  position: fixed;
+  top: 0;
+  font-size: 28rpx;
+  color: #777;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  left: 80rpx;
+  z-index: 23;
+}
+
+.unOrder {
+  position: fixed;
+  display: flex;
+  top: 66rpx;
+  color: #fff;
+  left: 300rpx;
+  font-size: 24rpx;
+}
+
+.getOrder {
+  position: fixed;
+  top: 100rpx;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 24rpx;
+  left: 340rpx;
+}
+
+.radio_buttun {
+  position: fixed;
+  display: flex;
+  width: 720rpx;
+  padding: 15rpx;
+  border-bottom: 10rpx solid #f2f2f2;
+  justify-content: space-around;
+  z-index: 22;
+  background: #fff;
+}
+
+.vertical {
+  flex-direction: row-reverse;
+  justify-content: center;
+  padding: 15rpx;
+  font-size: 24rpx;
+}
+
+.marquee_box {
+  width: 100%;
+  position: relative;
+}
+
+.marquee_text {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}
+
+.action_img {
+  width: 80rpx;
+  height: 100%;
+  z-index: 2;
+}
+
+.bottom_layout {
+  position: fixed;
+  bottom: 0rpx;
+  height: 120rpx;
+  align-items: center;
+  width: 750rpx;
+  border-top: 1rpx solid #bbb;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+}
+
+.btn {
+  border: 1rpx solid #f2f2f2;
+  padding: 15rpx;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.empty_img {
+  width: 204rpx;
+  height: 228rpx;
+  justify-content: center;
+  align-self: center;
+  padding-top: 150rpx;
+  align-items: center;
+  margin-left: 273rpx;
+}
+
+.empty_order {
+  margin-top: 50rpx;
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  margin-left: 322rpx
+}
