@@ -31,7 +31,7 @@ Page({
 
     control.getJudge(res => {
       var code = res.data;
-      if (code != 1) {
+      if (code != control.getType()) {
         wx.redirectTo({
           url: '/pages/index/index',
         })

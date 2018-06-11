@@ -8,12 +8,19 @@ var app = getApp();
 var control = function () {
 }
 
+function getType() {
+  return appType
+}
 /**
  * 获取判断条件
  * 1 审核中
  * 2 线上
  */
 function getJudge(callback) {
+  //设置status返回值
+  // vUtil.request("api/setSecretkey?status=1", {}, res => {
+
+  // })
   vUtil.request("api/getSecretkey", { type: appType }, res => {
     callback(res)
   })
@@ -203,5 +210,6 @@ module.exports = {
   closeOrder: closeOrder,
   evaluate: evaluate,
   getJudge: getJudge,
-  getNoticeInfo: getNoticeInfo
+  getNoticeInfo: getNoticeInfo,
+  getType: getType
 };
